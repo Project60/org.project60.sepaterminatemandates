@@ -70,7 +70,10 @@
             {assign var=cbName value=$row.checkbox}
             {if $taskMetaData}<td>{$form.$cbName.html}</td>{/if}
             <td>{$row.id}</td>
-            <td>{$row.contact}</td>
+            <td>
+              {$row.contact_image}
+              <a href="{$row.contact_link}">{$row.contact}</a>
+            </td>
             <td>
               {$row.start_date|crmDate}
             </td>

@@ -62,6 +62,8 @@ class CRM_Sepaterminatemandates_Query {
         'campaign' => $this->dao->campaign,
         'contributions' => $this->getContributions($this->dao->recur_id),
       ];
+      $row['contact_link'] = CRM_Utils_System::url('civicrm/contact/view', 'reset=1&cid=' . $row['contact_id']);
+      $row['contact_image'] = CRM_Contact_BAO_Contact_Utils::getImage($this->dao->contact_sub_type ? $this->dao->contact_sub_type : $this->dao->contact_type,  FALSE, $this->dao->contact_id);
       $rows[] = $row;
     }
     return $rows;
@@ -142,6 +144,8 @@ class CRM_Sepaterminatemandates_Query {
         `mandate`.`reference` as `reference`,
         `contact`.`id` as `contact_id`,
         `contact`.`display_name` as `contact`,
+        `contact`.`contact_type` as `contact_type`,
+        `contact`.`contact_sub_type` as `contact_sub_type`,
         `rcur`.`start_date` as `start_date`,
         `rcur`.`campaign_id` as `campaign_id`,
         `rcur`.`id` as `recur_id`,
