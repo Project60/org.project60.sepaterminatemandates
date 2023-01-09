@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/sepa/terminatemandate/search</path>
+    <page_callback>CRM_Sepaterminatemandates_Controller_SearchMandates</page_callback>
+    <title>SearchMandates</title>
+    <access_arguments>edit sepa mandates</access_arguments>
+  </item>
+</menu>
