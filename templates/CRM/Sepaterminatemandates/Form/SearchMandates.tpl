@@ -59,6 +59,10 @@
           {if $taskMetaData}<th scope="col" title="Select Rows" style="{if $sticky_header}position: sticky; top: 35px;{/if}">{$form.toggleSelect.html}</th>{/if}
           <th scope="col" style="{if $sticky_header}position: sticky; top: 35px;{/if}">{ts}ID{/ts}</th>
           <th scope="col" style="{if $sticky_header}position: sticky; top: 35px;{/if}">{ts}Contact{/ts}</th>
+          <th scope="col" style="{if $sticky_header}position: sticky; top: 35px;{/if}">{ts}Start date{/ts}</th>
+          <th scope="col" style="{if $sticky_header}position: sticky; top: 35px;{/if}">{ts}Campaign{/ts}</th>
+          <th scope="col" style="{if $sticky_header}position: sticky; top: 35px;{/if}">{ts}Reference{/ts}</th>
+          <th scope="col" style="{if $sticky_header}position: sticky; top: 35px;{/if}">{ts 1=$cancelledContributionsMonths}Contributions (in last %1 months){/ts}</th>
           <th scope="col" style="">&nbsp;</th>
         </tr></thead>
         {foreach from=$rows item=row}
@@ -67,6 +71,21 @@
             {if $taskMetaData}<td>{$form.$cbName.html}</td>{/if}
             <td>{$row.id}</td>
             <td>{$row.contact}</td>
+            <td>
+              {$row.start_date|crmDate}
+            </td>
+            <td>
+              {$row.campaign}
+            </td>
+            <td>
+              {$row.reference}
+            </td>
+            <td>
+              {foreach from=$row.contributions item=contribution name=contributionForEach}
+                  <span style="{if $contribution.is_cancelled}color: red;{/if}">{$contribution.receive_date|crmDate} - {$contribution.status}</span> {if $contribution.cancel_reason}({$contribution.cancel_reason}){/if}
+                  {if !$smarty.foreach.contributionForEach.last}<br />{/if}
+              {/foreach}
+            </td>
             <td>
                 {if ($row.url)}
                   <a href="{$row.url}">

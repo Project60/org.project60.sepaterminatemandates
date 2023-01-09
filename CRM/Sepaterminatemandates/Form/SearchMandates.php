@@ -37,17 +37,14 @@ class CRM_Sepaterminatemandates_Form_SearchMandates extends CRM_Core_Form_Search
     $this->_formValues = $this->getSubmitValues();
     if (!empty($this->_formValues)) {
       $defaultLimit = 50;
+      $this->assign('cancelledContributionsMonths', $this->_formValues['cancelled_contributions_months']);
       $limit = CRM_Utils_Request::retrieveValue('crmRowCount', 'Positive', $defaultLimit);
       $pageId = CRM_Utils_Request::retrieveValue('crmPID', 'Positive', 1);
       $offset = ($pageId - 1) * $limit;
 
-      $count = 1; // @Todo replace this
-      $rows = [
-        [
-          'id' => 1,
-          'contact' => 'Jaap Jansma',
-        ]
-      ]; // @Todo replace this
+      $query = new CRM_Sepaterminatemandates_Query($this->getSubmitValues(), $offset, $limit);
+      $count = $query->count();
+      $rows = $query->rows();
       $this->entityIDs = [];
       foreach($rows as $index => $row) {
         $rows[$index]['checkbox'] = CRM_Core_Form::CB_PREFIX . $row['id'];

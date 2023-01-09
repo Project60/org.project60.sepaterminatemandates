@@ -54,7 +54,7 @@ class Config extends Container {
         GROUP BY `c`.`cancel_reason`
         HAVING COUNT(`c`.`cancel_reason`) >= 1;");
     while ($dao->fetch()) {
-      $cancelReasons[] = $dao->cancel_reason;
+      $cancelReasons[$dao->cancel_reason] = $dao->cancel_reason;
     }
     $containerBuilder->setParameter('cancel_reasons', $cancelReasons);
   }
