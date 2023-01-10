@@ -42,19 +42,22 @@ SET FOREIGN_KEY_CHECKS=1;
 -- *
 -- * civicrm_sdd_mandate_termination_criterion
 -- *
--- * FIXME
+-- * Search Criteria for automatically termination of SEPA mandates
 -- *
 -- *******************************************************/
 CREATE TABLE `civicrm_sdd_mandate_termination_criterion` (
 
 
      `id` int unsigned NOT NULL AUTO_INCREMENT  COMMENT 'Unique SEPAMandateTerminationCriterion ID',
-     `contact_id` int unsigned    COMMENT 'FK to Contact' 
+     `description` text NULL   ,
+     `is_active` tinyint NOT NULL  DEFAULT 1 ,
+     `search_criteria` text NULL   ,
+     `terminate_configuration` text NULL    
 ,
         PRIMARY KEY (`id`)
  
  
-,          CONSTRAINT FK_civicrm_sdd_mandate_termination_criterion_contact_id FOREIGN KEY (`contact_id`) REFERENCES `civicrm_contact`(`id`) ON DELETE CASCADE  
+ 
 )  ENGINE=InnoDB  ;
 
  

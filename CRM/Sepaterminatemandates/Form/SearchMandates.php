@@ -18,6 +18,7 @@ class CRM_Sepaterminatemandates_Form_SearchMandates extends CRM_Core_Form_Search
    */
   public function preProcess() {
     parent::preProcess();
+    CRM_Utils_System::setTitle(E::ts('Find Mandates to terminate'));
     $qfKey = CRM_Utils_Request::retrieveValue('qfKey', 'String');
     $urlPath = CRM_Utils_System::currentPath();
     $urlParams = 'force=1';
@@ -78,12 +79,13 @@ class CRM_Sepaterminatemandates_Form_SearchMandates extends CRM_Core_Form_Search
     $this->addEntityRef('campaign_ids', E::ts('Campaign'), [
       'entity' => 'Campaign',
       'select' => ['minimumInputLength' => 0],
+      'placeholder' => E::ts('- Any campaign -'),
       'multiple' => TRUE,
     ], FALSE);
     $this->add('select', 'cancel_reasons', E::ts('Cancel Reason'), $config->getCancelReasons(), FALSE, [
       'style' => 'min-width:250px',
       'class' => 'crm-select2 huge',
-      'placeholder' => E::ts('- select -'),
+      'placeholder' => E::ts('- Any reason -'),
       'multiple' => TRUE,
     ]);
 

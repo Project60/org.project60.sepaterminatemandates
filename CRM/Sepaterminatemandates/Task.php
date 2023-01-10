@@ -21,7 +21,13 @@ class CRM_Sepaterminatemandates_Task extends CRM_Core_Task {
     if (!(self::$_tasks)) {
       self::$objectType = 'sepaterminatemandates';
 
-      self::$_tasks = array();
+      self::$_tasks = [
+        'CRM_Sepaterminatemandates_Form_Task_TerminateMandate' => [
+          'class' => 'CRM_Sepaterminatemandates_Form_Task_TerminateMandate',
+          'title' => E::ts('Terminate Mandates'),
+          'result' => true,
+        ]
+      ];
       parent::tasks();
     }
 

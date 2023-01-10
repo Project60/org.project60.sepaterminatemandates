@@ -6,4 +6,16 @@
     <title>SearchMandates</title>
     <access_arguments>edit sepa mandates</access_arguments>
   </item>
+  <item>
+    <path>civicrm/terminatemandate/manage</path>
+    <page_callback>CRM_Sepaterminatemandates_Form_ManageCriteria</page_callback>
+    <title>Manage Criteria for Termination of Mandates</title>
+    <access_arguments>administer CiviCRM</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/terminatemandate/edit</path>
+    <page_callback>CRM_Sepaterminatemandates_Form_EditCriteria</page_callback>
+    <title>Edit Criteria for Termination of Mandates</title>
+    <access_arguments>administer CiviCRM</access_arguments>
+  </item>
 </menu>

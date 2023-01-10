@@ -1,6 +1,6 @@
 {crmScope extensionKey='org.project60.sepaterminatemandates'}
 <div class="crm-form-block crm-search-form-block">
-  <div class="crm-accordion-wrapper crm-advanced_search_form-accordion {if (!empty($rows))}collapsed{/if}">
+  <div class="crm-accordion-wrapper crm-advanced_search_form-accordion {if (isset($rows))}collapsed{/if}">
     <div class="crm-accordion-header crm-master-accordion-header">
         {ts}Search Criteria{/ts}
     </div>
@@ -106,5 +106,7 @@
 
   </div>
 </div>
+{elseif (isset($rows) && empty($rows))}
+  <div class="messages status no-popup"><i aria-hidden="true" class="crm-i fa-info-circle"></i>&nbsp;{ts}No mandates found{/ts}</div>
 {/if}
 {/crmScope}

@@ -77,14 +77,24 @@ function sepaterminatemandates_civicrm_entityTypes(&$entityTypes): void {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_navigationMenu
  */
-//function sepaterminatemandates_civicrm_navigationMenu(&$menu): void {
-//  _sepaterminatemandates_civix_insert_navigation_menu($menu, 'Mailings', [
-//    'label' => E::ts('New subliminal message'),
-//    'name' => 'mailing_subliminal_message',
-//    'url' => 'civicrm/mailing/subliminal',
-//    'permission' => 'access CiviMail',
-//    'operator' => 'OR',
-//    'separator' => 0,
-//  ]);
-//  _sepaterminatemandates_civix_navigationMenu($menu);
-//}
+function sepaterminatemandates_civicrm_navigationMenu(&$menu): void {
+  _sepaterminatemandates_civix_insert_navigation_menu($menu, 'Contributions', [
+    'label' => E::ts('Find mandates to terminate'),
+    'name' => 'sepaterminatemandates_search',
+    'url' => 'civicrm/sepa/terminatemandate/search?reset=1',
+    'permission' => 'edit sepa mandates',
+    'operator' => 'OR',
+    'separator' => 0,
+  ]);
+
+  _sepaterminatemandates_civix_insert_navigation_menu($menu, 'Administer/CiviContribute', [
+    'label' => E::ts('Automatically terminate SEPA mandates'),
+    'name' => 'sepaterminatemandates_manage',
+    'url' => 'civicrm/terminatemandate/manage?reset=1',
+    'permission' => 'administer CiviCRM',
+    'operator' => 'OR',
+    'separator' => 0,
+  ]);
+
+  _sepaterminatemandates_civix_navigationMenu($menu);
+}

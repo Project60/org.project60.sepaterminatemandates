@@ -4,7 +4,7 @@
   <base>CRM/Sepaterminatemandates</base>
   <class>SEPAMandateTerminationCriterion</class>
   <name>civicrm_sdd_mandate_termination_criterion</name>
-  <comment>FIXME</comment>
+  <comment>Search Criteria for automatically termination of SEPA mandates</comment>
   <log>true</log>
 
   <field>
@@ -22,15 +22,37 @@
   </primaryKey>
 
   <field>
-    <name>contact_id</name>
-    <type>int unsigned</type>
-    <comment>FK to Contact</comment>
+    <name>description</name>
+    <title>Description</title>
+    <type>text</type>
+    <required>false</required>
+    <length>255</length>
   </field>
-  <foreignKey>
-    <name>contact_id</name>
-    <table>civicrm_contact</table>
-    <key>id</key>
-    <onDelete>CASCADE</onDelete>
-  </foreignKey>
+
+  <field>
+    <name>is_active</name>
+    <title>Is active</title>
+    <type>boolean</type>
+    <required>true</required>
+    <default>1</default>
+  </field>
+
+  <field>
+    <name>search_criteria</name>
+    <title>Search Criteria</title>
+    <type>text</type>
+    <required>false</required>
+    <length>255</length>
+    <serialize>JSON</serialize>
+  </field>
+
+  <field>
+    <name>terminate_configuration</name>
+    <title>Terminate Configuration</title>
+    <type>text</type>
+    <required>false</required>
+    <length>255</length>
+    <serialize>JSON</serialize>
+  </field>
 
 </table>

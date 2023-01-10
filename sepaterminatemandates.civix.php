@@ -122,7 +122,36 @@ function _sepaterminatemandates_civix_civicrm_config(&$config = NULL) {
  */
 function _sepaterminatemandates_civix_civicrm_install() {
   _sepaterminatemandates_civix_civicrm_config();
+  if ($upgrader = _sepaterminatemandates_civix_upgrader()) {
+    $upgrader->onInstall();
+  }
   _sepaterminatemandates_civix_mixin_polyfill();
+}
+
+/**
+ * Implements hook_civicrm_postInstall().
+ *
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_postInstall
+ */
+function _sepaterminatemandates_civix_civicrm_postInstall() {
+  _sepaterminatemandates_civix_civicrm_config();
+  if ($upgrader = _sepaterminatemandates_civix_upgrader()) {
+    if (is_callable([$upgrader, 'onPostInstall'])) {
+      $upgrader->onPostInstall();
+    }
+  }
+}
+
+/**
+ * Implements hook_civicrm_uninstall().
+ *
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_uninstall
+ */
+function _sepaterminatemandates_civix_civicrm_uninstall() {
+  _sepaterminatemandates_civix_civicrm_config();
+  if ($upgrader = _sepaterminatemandates_civix_upgrader()) {
+    $upgrader->onUninstall();
+  }
 }
 
 /**
@@ -130,9 +159,59 @@ function _sepaterminatemandates_civix_civicrm_install() {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_enable
  */
-function _sepaterminatemandates_civix_civicrm_enable(): void {
+function _sepaterminatemandates_civix_civicrm_enable() {
   _sepaterminatemandates_civix_civicrm_config();
+  if ($upgrader = _sepaterminatemandates_civix_upgrader()) {
+    if (is_callable([$upgrader, 'onEnable'])) {
+      $upgrader->onEnable();
+    }
+  }
   _sepaterminatemandates_civix_mixin_polyfill();
+}
+
+/**
+ * (Delegated) Implements hook_civicrm_disable().
+ *
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_disable
+ * @return mixed
+ */
+function _sepaterminatemandates_civix_civicrm_disable() {
+  _sepaterminatemandates_civix_civicrm_config();
+  if ($upgrader = _sepaterminatemandates_civix_upgrader()) {
+    if (is_callable([$upgrader, 'onDisable'])) {
+      $upgrader->onDisable();
+    }
+  }
+}
+
+/**
+ * (Delegated) Implements hook_civicrm_upgrade().
+ *
+ * @param $op string, the type of operation being performed; 'check' or 'enqueue'
+ * @param $queue CRM_Queue_Queue, (for 'enqueue') the modifiable list of pending up upgrade tasks
+ *
+ * @return mixed
+ *   based on op. for 'check', returns array(boolean) (TRUE if upgrades are pending)
+ *   for 'enqueue', returns void
+ *
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_upgrade
+ */
+function _sepaterminatemandates_civix_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
+  if ($upgrader = _sepaterminatemandates_civix_upgrader()) {
+    return $upgrader->onUpgrade($op, $queue);
+  }
+}
+
+/**
+ * @return CRM_Sepaterminatemandates_Upgrader
+ */
+function _sepaterminatemandates_civix_upgrader() {
+  if (!file_exists(__DIR__ . '/CRM/Sepaterminatemandates/Upgrader.php')) {
+    return NULL;
+  }
+  else {
+    return CRM_Sepaterminatemandates_Upgrader_Base::instance();
+  }
 }
 
 /**
