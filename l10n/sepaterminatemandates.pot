@@ -1,0 +1,272 @@
+#: ./CRM/Sepaterminatemandates/DAO/SEPAMandateTerminationCriterion.php
+msgid "SEPAMandate Termination Criterions"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/DAO/SEPAMandateTerminationCriterion.php
+msgid "SEPAMandate Termination Criterion"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/DAO/SEPAMandateTerminationCriterion.php
+msgid "Unique SEPAMandateTerminationCriterion ID"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/DAO/SEPAMandateTerminationCriterion.php ./CRM/Sepaterminatemandates/Form/EditCriteria.php ./templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Description"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/DAO/SEPAMandateTerminationCriterion.php ./templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Is active"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/DAO/SEPAMandateTerminationCriterion.php ./templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl ./templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "Search Criteria"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/DAO/SEPAMandateTerminationCriterion.php
+msgid "Terminate Configuration"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/DAO/SEPAMandateTerminationCriterion.php
+msgid "Next Check Date"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php
+msgid "Criteria disabled"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php ./templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Disable"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php
+msgid "Criteria enabled"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php ./templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Enable"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php ./templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Enabled"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php ./CRM/Sepaterminatemandates/Form/SearchMandates.php
+msgid "Cancelled contributions Quantity"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php ./CRM/Sepaterminatemandates/Form/SearchMandates.php
+msgid "Cancelled contributions last months"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php ./CRM/Sepaterminatemandates/Form/SearchMandates.php
+msgid "Successive"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php ./CRM/Sepaterminatemandates/Form/SearchMandates.php ./templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "Campaign"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php ./CRM/Sepaterminatemandates/Form/SearchMandates.php
+msgid "- Any campaign -"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php ./CRM/Sepaterminatemandates/Form/SearchMandates.php ./CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php
+msgid "Cancel Reason"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php ./CRM/Sepaterminatemandates/Form/SearchMandates.php
+msgid "- Any reason -"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php ./CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php
+msgid "Activity Type"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php ./CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php
+msgid "- select -"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php ./CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php
+msgid "Activity Status"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php ./CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php
+msgid "Activity Assignee"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php
+msgid "Save"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php
+msgid "Cancel"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php ./templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Delete"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php
+msgid "Criteria removed"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/EditCriteria.php
+msgid "Removed"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/ManageCriteria.php
+msgid "Manage Criteria for terminating mandates"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/SearchMandates.php
+msgid "Find Mandates to terminate"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/SearchMandates.php
+msgid "%%StatusMessage%%"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/Task/SearchActionDesigner.php
+msgid "Invalid search task"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/Task/SearchActionDesigner.php ./CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php
+msgid "Number of selected records: %1"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php
+msgid "Next"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php
+msgid "Terminate mandate %1"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php ./templates/CRM/Sepaterminatemandates/Form/Task/TerminateMandate.tpl
+msgid "Terminate mandates"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Task.php
+msgid "Terminate Mandates"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Task.php
+msgid "Sepa Terminate Mandates"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Task.php
+msgid "Mandate ID"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Upgrader/Base.php
+msgid "Upgrade %1 to revision %2"
+msgstr ""
+
+#: ./CRM/Sepaterminatemandates/Utils.php
+msgid "Sepa mandate %1 cancelled because: %2"
+msgstr ""
+
+#: ./sepaterminatemandates.php
+msgid "Find mandates to terminate"
+msgstr ""
+
+#: ./sepaterminatemandates.php
+msgid "Automatically terminate SEPA mandates"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl
+msgid "Delete Criteria for termination of mandates"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl
+msgid "Are you sure?"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl
+msgid "Search Criteria for mandate termination"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl ./templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "Cancelled contributions"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl
+msgid "This field is required."
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl ./templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "in the last"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl ./templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "months"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl
+msgid "Terminate mandate action"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl
+msgid "Terminate the selected mandates please provide a reason for terminating those mandates\n          and additionally specify the activity type and to who the activity should be assigned.\n        "
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Add Criteria to terminate mandates"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Next check date"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Disabled"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Edit Criteria"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Edit"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Delete Criteria"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "No criteria found"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "Reset all selections"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "ID"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "Contact"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "Start date"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "Reference"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "Contributions (in last %1 months)"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "No mandates found"
+msgstr ""
+
+#: ./templates/CRM/Sepaterminatemandates/Form/Task/TerminateMandate.tpl
+msgid "Terminate the selected mandates please provide a reason for terminating those mandates\n          and additionally specify the activity type and to who the activity should be assigned.\n    "
+msgstr ""
+
