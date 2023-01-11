@@ -16,6 +16,7 @@
         <tr>
           <th scope="col" >{ts}Description{/ts}</th>
           <th scope="col" >{ts}Is active{/ts}</th>
+          <th scope="col" >{ts}Next check date{/ts}</th>
           <th>&nbsp;</th>
         </tr>
         </thead>
@@ -30,6 +31,9 @@
                   <a href="{crmURL p='civicrm/terminatemandate/edit' q="reset=1&action=enable&id=`$row.id`"}" class="" title="{ts}Enable{/ts}">{ts}Disabled{/ts}</a>
                 {/if}
                 </span>
+              </td>
+              <td>
+                {$row.next_check_date|crmDate}
               </td>
               <td>
                 <span>

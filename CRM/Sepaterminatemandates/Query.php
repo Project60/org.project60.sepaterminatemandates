@@ -69,6 +69,21 @@ class CRM_Sepaterminatemandates_Query {
     return $rows;
   }
 
+  /**
+   * @param $terminateConfiguration
+   *
+   * @return int
+   * @throws \CiviCRM_API3_Exception
+   */
+  public function terminateAllFoundMandates($terminateConfiguration) {
+    $count = 0;
+    while($this->dao->fetch()) {
+      CRM_Sepaterminatemandates_Utils::terminateMandate($this->dao->id, $terminateConfiguration);
+      $count++;
+    }
+    return $count;
+  }
+
   protected function getContributions($contribution_recur_id) {
     $sql = "
       SELECT

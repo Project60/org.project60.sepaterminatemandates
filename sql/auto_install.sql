@@ -52,7 +52,8 @@ CREATE TABLE `civicrm_sdd_mandate_termination_criterion` (
      `description` text NULL   ,
      `is_active` tinyint NOT NULL  DEFAULT 1 ,
      `search_criteria` text NULL   ,
-     `terminate_configuration` text NULL    
+     `terminate_configuration` text NULL   ,
+     `next_check_date` date NULL    
 ,
         PRIMARY KEY (`id`)
  

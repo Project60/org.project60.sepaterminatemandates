@@ -55,4 +55,15 @@
     <serialize>JSON</serialize>
   </field>
 
+  <field>
+    <name>next_check_date</name>
+    <title>Next Check Date</title>
+    <type>date</type>
+    <required>false</required>
+    <html>
+      <type>Select Date</type>
+    </html>
+  </field>
+
+
 </table>

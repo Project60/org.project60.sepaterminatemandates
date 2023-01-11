@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-function civicrm_api3_sepa_terminate_mandates_generatetestdata($params) {
+function civicrm_api3_sepa_terminate_mandates_Generatetestdata($params) {
   $testData = new CRM_Sepaterminatemandates_TestData();
   $result = $testData->generate();
   return $result;

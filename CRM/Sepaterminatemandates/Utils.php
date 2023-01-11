@@ -16,6 +16,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+use CRM_Sepaterminatemandates_ExtensionUtil as E;
+
 class CRM_Sepaterminatemandates_Utils {
 
   /**
@@ -64,6 +66,30 @@ class CRM_Sepaterminatemandates_Utils {
     } catch (CiviCRM_API3_Exception $e) {
     }
     return $options;
+  }
+
+  /**
+   * Terminate a mandate
+   *
+   * @param int $entityId
+   * @param $terminateConfiguration
+   *
+   * @return bool
+   * @throws \CiviCRM_API3_Exception
+   */
+  public static function terminateMandate(int $mandateId, $terminateConfiguration) {
+    $mandate = civicrm_api3('SepaMandate', 'getsingle', ['id' => $mandateId]);
+    $contactId = $mandate['contact_id'];
+    civicrm_api3('SepaMandate', 'terminate', ['mandate_id' => $mandateId, 'cancel_reason' => $terminateConfiguration['reason']]);
+    civicrm_api3('Activity', 'create', [
+      //'source_contact_id' => $contactId,
+      'activity_type_id' => $terminateConfiguration['activity_type_id'],
+      'status_id' => $terminateConfiguration['activity_status_id'],
+      'target_id' => $contactId,
+      'assignee_id' => $terminateConfiguration['activity_assignee'],
+      'subject' => E::ts('Sepa mandate %1 cancelled because: %2', [1=>$mandate['reference'], 2=>$terminateConfiguration['reason']]),
+    ]);
+    return TRUE;
   }
 
 }

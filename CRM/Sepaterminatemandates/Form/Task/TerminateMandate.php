@@ -121,18 +121,8 @@ class CRM_Sepaterminatemandates_Form_Task_TerminateMandate extends CRM_Core_Form
     $runner->runAllViaWeb(); // does not return
   }
 
-  public static function terminateMandate(CRM_Queue_TaskContext $ctx, int $entityId, $values) {
-    $mandate = civicrm_api3('SepaMandate', 'getsingle', ['id' => $entityId]);
-    $contactId = $mandate['contact_id'];
-    civicrm_api3('SepaMandate', 'terminate', ['mandate_id' => $entityId, 'cancel_reason' => $values['reason']]);
-    civicrm_api3('Activity', 'create', [
-      //'source_contact_id' => $contactId,
-      'activity_type_id' => $values['activity_type_id'],
-      'status_id' => $values['activity_status_id'],
-      'target_id' => $contactId,
-      'assignee_id' => $values['activity_assignee'],
-      'subject' => E::ts('Sepa mandate cancelled because: %1', [1=>$values['reason']]),
-    ]);
+  public static function terminateMandate(CRM_Queue_TaskContext $ctx, int $mandateId, $terminateConfiguration) {
+    CRM_Sepaterminatemandates_Utils::terminateMandate($mandateId, $terminateConfiguration);
     return TRUE;
   }
 
