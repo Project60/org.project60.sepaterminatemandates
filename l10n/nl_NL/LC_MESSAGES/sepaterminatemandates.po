@@ -1,0 +1,322 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#: CRM/Sepaterminatemandates/DAO/SEPAMandateTerminationCriterion.php
+msgid "SEPAMandate Termination Criterions"
+msgstr "SEPA Mandaat Annuleringscriteria"
+
+#: CRM/Sepaterminatemandates/DAO/SEPAMandateTerminationCriterion.php
+msgid "SEPAMandate Termination Criterion"
+msgstr "SEPA Mandaat Annuleringscriterium"
+
+#: CRM/Sepaterminatemandates/DAO/SEPAMandateTerminationCriterion.php
+msgid "Unique SEPAMandateTerminationCriterion ID"
+msgstr "Uniek SEPA Mandaat Annuleringscriterium ID"
+
+#: CRM/Sepaterminatemandates/DAO/SEPAMandateTerminationCriterion.php
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+#: templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Description"
+msgstr "Omschrijving"
+
+#: CRM/Sepaterminatemandates/DAO/SEPAMandateTerminationCriterion.php
+#: templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Is active"
+msgstr "Is actief"
+
+#: CRM/Sepaterminatemandates/DAO/SEPAMandateTerminationCriterion.php
+#: templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl
+#: templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "Search Criteria"
+msgstr "Zoek Criteria"
+
+#: CRM/Sepaterminatemandates/DAO/SEPAMandateTerminationCriterion.php
+msgid "Terminate Configuration"
+msgstr "Annulatie configuratie"
+
+#: CRM/Sepaterminatemandates/DAO/SEPAMandateTerminationCriterion.php
+msgid "Next Check Date"
+msgstr "Volgende controle datum"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+msgid "Criteria disabled"
+msgstr "Criteria is uitgeschakeld"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+#: templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Disable"
+msgstr "Uitschakelen"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+msgid "Criteria enabled"
+msgstr "Criteria is ingeschakeld"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+#: templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Enable"
+msgstr "Inschakelen"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+#: templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Enabled"
+msgstr "Ingeschakeld"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+#: CRM/Sepaterminatemandates/Form/SearchMandates.php
+msgid "Cancelled contributions Quantity"
+msgstr "Aantal geannuleerde bijdrages"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+#: CRM/Sepaterminatemandates/Form/SearchMandates.php
+msgid "Cancelled contributions last months"
+msgstr "Geannuleerde bijdrages afgelopen maanden"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+#: CRM/Sepaterminatemandates/Form/SearchMandates.php
+msgid "Successive"
+msgstr "Opeenvolgend"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+#: CRM/Sepaterminatemandates/Form/SearchMandates.php
+#: templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "Campaign"
+msgstr "Campagne"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+#: CRM/Sepaterminatemandates/Form/SearchMandates.php
+msgid "- Any campaign -"
+msgstr "- Iedere campagne -"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+#: CRM/Sepaterminatemandates/Form/SearchMandates.php
+#: CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php
+msgid "Cancel Reason"
+msgstr "Annuleringsreden"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+#: CRM/Sepaterminatemandates/Form/SearchMandates.php
+msgid "- Any reason -"
+msgstr "- Iedere reden -"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+#: CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php
+msgid "Activity Type"
+msgstr "Activiteitstype"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+#: CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php
+msgid "- select -"
+msgstr "- Selecteer -"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+#: CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php
+msgid "Activity Status"
+msgstr "Activiteitsstatus"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+#: CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php
+msgid "Activity Assignee"
+msgstr "Activiteit toekennen aan"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+msgid "Save"
+msgstr "Opslaan"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+#: templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+msgid "Criteria removed"
+msgstr "Criteria is verwijderd"
+
+#: CRM/Sepaterminatemandates/Form/EditCriteria.php
+msgid "Removed"
+msgstr "Verwijderd"
+
+#: CRM/Sepaterminatemandates/Form/ManageCriteria.php
+msgid "Manage Criteria for terminating mandates"
+msgstr "Beheer criteria voor beëindigen van mandaten"
+
+#: CRM/Sepaterminatemandates/Form/SearchMandates.php
+msgid "Find Mandates to terminate"
+msgstr "Zoek mandaten om te beëindigen"
+
+#: CRM/Sepaterminatemandates/Form/SearchMandates.php
+msgid "%%StatusMessage%%"
+msgstr ""
+
+#: CRM/Sepaterminatemandates/Form/Task/SearchActionDesigner.php
+msgid "Invalid search task"
+msgstr "Ongeldige zoek actie"
+
+#: CRM/Sepaterminatemandates/Form/Task/SearchActionDesigner.php
+#: CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php
+msgid "Number of selected records: %1"
+msgstr "Aantal geslecteerde rijen"
+
+#: CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php
+msgid "Next"
+msgstr "Volgende"
+
+#: CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php
+msgid "Terminate mandate %1"
+msgstr "Annuleer mandaat %1"
+
+#: CRM/Sepaterminatemandates/Form/Task/TerminateMandate.php
+#: templates/CRM/Sepaterminatemandates/Form/Task/TerminateMandate.tpl
+msgid "Terminate mandates"
+msgstr "Annunleer mandaten"
+
+#: CRM/Sepaterminatemandates/Task.php
+msgid "Terminate Mandates"
+msgstr "Annuleer Mandaten"
+
+#: CRM/Sepaterminatemandates/Task.php
+msgid "Sepa Terminate Mandates"
+msgstr "SEPA Annuleer Mandaten"
+
+#: CRM/Sepaterminatemandates/Task.php
+msgid "Mandate ID"
+msgstr "Mandaat ID"
+
+#: CRM/Sepaterminatemandates/Upgrader/Base.php
+msgid "Upgrade %1 to revision %2"
+msgstr ""
+
+#: CRM/Sepaterminatemandates/Utils.php
+msgid "Sepa mandate %1 cancelled because: %2"
+msgstr "SEPA Mandaat %1 geannuleerd omdat: %2"
+
+#: sepaterminatemandates.php
+msgid "Find mandates to terminate"
+msgstr "Zoek mandaten om te annuleren"
+
+#: sepaterminatemandates.php
+msgid "Automatically terminate SEPA mandates"
+msgstr "Annuleer SEPA mandaten automatisch"
+
+#: templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl
+msgid "Delete Criteria for termination of mandates"
+msgstr "Verwijder mandaat annulatie criteria"
+
+#: templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl
+msgid "Are you sure?"
+msgstr "Weet je het zeker?"
+
+#: templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl
+msgid "Search Criteria for mandate termination"
+msgstr "Zoek criteria om mandaten te beëindigen"
+
+#: templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl
+#: templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "Cancelled contributions"
+msgstr "Geannuleerde bijdragen"
+
+#: templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl
+msgid "This field is required."
+msgstr "Dit veld is verplicht."
+
+#: templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl
+#: templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "in the last"
+msgstr "in de afgelopen"
+
+#: templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl
+#: templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "months"
+msgstr "maanden"
+
+#: templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl
+msgid "Terminate mandate action"
+msgstr "Annuleer mandaat actie"
+
+#: templates/CRM/Sepaterminatemandates/Form/EditCriteria.tpl
+msgid ""
+"Terminate the selected mandates please provide a reason for terminating those mandates\n"
+"          and additionally specify the activity type and to who the activity should be assigned.\n"
+"        "
+msgstr ""
+"Annuleer de geslecteerde mandaten. Geef een reden op om deze mandaten te beëindigen.\n"
+"   En geef de activiteitstype en aan wie de activiteit toegekend moet worden op."
+
+#: templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Add Criteria to terminate mandates"
+msgstr "Voer mandaat annuleringscriteria toe"
+
+#: templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Next check date"
+msgstr "Volgende controle datum"
+
+#: templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Disabled"
+msgstr "Uitgeschakeld"
+
+#: templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Edit Criteria"
+msgstr "Bewerk criteria"
+
+#: templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Edit"
+msgstr "Bewerk"
+
+#: templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "Delete Criteria"
+msgstr "Verwijder Criteria"
+
+#: templates/CRM/Sepaterminatemandates/Form/ManageCriteria.tpl
+msgid "No criteria found"
+msgstr "Geen criteria gevonden"
+
+#: templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "Reset all selections"
+msgstr "Herstel alle selecties"
+
+#: templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "ID"
+msgstr "ID"
+
+#: templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "Contact"
+msgstr "Contact"
+
+#: templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "Start date"
+msgstr "Startdatum"
+
+#: templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "Reference"
+msgstr "Referentie"
+
+#: templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "Contributions (in last %1 months)"
+msgstr "Bijdragen (in laatste %1 maanden)"
+
+#: templates/CRM/Sepaterminatemandates/Form/SearchMandates.tpl
+msgid "No mandates found"
+msgstr "Geen mandaten gevonden"
+
+#: templates/CRM/Sepaterminatemandates/Form/Task/TerminateMandate.tpl
+msgid ""
+"Terminate the selected mandates please provide a reason for terminating those mandates\n"
+"          and additionally specify the activity type and to who the activity should be assigned.\n"
+"    "
+msgstr ""
+"Terminate the selected mandates please provide a reason for terminating those mandates\n"
+"          and additionally specify the activity type and to who the activity should be assigned.\n"
+"        "
