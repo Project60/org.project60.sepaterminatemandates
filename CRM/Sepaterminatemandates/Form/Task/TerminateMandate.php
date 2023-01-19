@@ -72,7 +72,7 @@ class CRM_Sepaterminatemandates_Form_Task_TerminateMandate extends CRM_Core_Form
       'api' => array('params' => ['contact_type' => ['IN' => ['Individual']]]),
       'create' => false,
       'multiple' => false,
-    ], true);
+    ], false);
   }
 
   public function postProcess() {

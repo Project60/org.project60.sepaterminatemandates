@@ -81,14 +81,17 @@ class CRM_Sepaterminatemandates_Utils {
     $mandate = civicrm_api3('SepaMandate', 'getsingle', ['id' => $mandateId]);
     $contactId = $mandate['contact_id'];
     civicrm_api3('SepaMandate', 'terminate', ['mandate_id' => $mandateId, 'cancel_reason' => $terminateConfiguration['reason']]);
-    civicrm_api3('Activity', 'create', [
+    $activityApiParams = [
       //'source_contact_id' => $contactId,
       'activity_type_id' => $terminateConfiguration['activity_type_id'],
       'status_id' => $terminateConfiguration['activity_status_id'],
       'target_id' => $contactId,
-      'assignee_id' => $terminateConfiguration['activity_assignee'],
       'subject' => E::ts('Sepa mandate %1 cancelled because: %2', [1=>$mandate['reference'], 2=>$terminateConfiguration['reason']]),
-    ]);
+    ];
+    if (isset($terminateConfiguration['activity_assignee']) && !empty($terminateConfiguration['activity_assignee'])) {
+      $activityApiParams['assignee_id'] = $terminateConfiguration['activity_assignee'];
+    }
+    civicrm_api3('Activity', 'create', $activityApiParams);
     return TRUE;
   }
 

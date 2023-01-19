@@ -109,7 +109,7 @@ class CRM_Sepaterminatemandates_Form_EditCriteria extends CRM_Core_Form {
         'api' => array('params' => ['contact_type' => ['IN' => ['Individual']]]),
         'create' => false,
         'multiple' => false,
-      ], true);
+      ], false);
 
       $this->addButtons(array(
         array('type' => 'next', 'name' => E::ts('Save'), 'isDefault' => TRUE,),

@@ -34,9 +34,10 @@ function civicrm_api3_sepa_terminate_mandates_Cron($params) {
   if (isset($params['limit'])) {
     $limit = $params['limit'];
   }
+  $today = date('Y-m-d');
   $SEPAMandateTerminationCriterions = \Civi\Api4\SEPAMandateTerminationCriterion::get()
     ->addWhere('is_active', '=', TRUE)
-    ->addClause('OR', ['next_check_date', 'IS NULL'], ['next_check_date', '<=', '2023-01-11'])
+    ->addClause('OR', ['next_check_date', 'IS NULL'], ['next_check_date', '<=', $today])
     ->setLimit(0)
     ->execute();
   $terminatedMandateCount = 0;
