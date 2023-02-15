@@ -26,6 +26,11 @@ class CRM_Sepaterminatemandates_Task extends CRM_Core_Task {
           'class' => 'CRM_Sepaterminatemandates_Form_Task_TerminateMandate',
           'title' => E::ts('Terminate Mandates'),
           'result' => true,
+        ],
+        'CRM_Sepaterminatemandates_Form_Task_AddToGroup' => [
+          'class' => 'CRM_Sepaterminatemandates_Form_Task_AddToGroup',
+          'title' => E::ts('Group - Add contacts'),
+          'result' => true,
         ]
       ];
       parent::tasks();

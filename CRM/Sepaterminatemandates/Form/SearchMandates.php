@@ -86,6 +86,7 @@ class CRM_Sepaterminatemandates_Form_SearchMandates extends CRM_Core_Form_Search
       'style' => 'min-width:250px',
       'class' => 'crm-select2 huge',
       'placeholder' => E::ts('- Any reason -'),
+      'select' => ['minimumInputLength' => 0],
       'multiple' => TRUE,
     ]);
 

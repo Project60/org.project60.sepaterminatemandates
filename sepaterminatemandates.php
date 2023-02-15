@@ -98,3 +98,16 @@ function sepaterminatemandates_civicrm_navigationMenu(&$menu): void {
 
   _sepaterminatemandates_civix_navigationMenu($menu);
 }
+
+/**
+ * (Delegated) Implements hook_civicrm_xmlMenu().
+ *
+ * @param $files array(string)
+ *
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_xmlMenu
+ */
+function sepaterminatemandates_civix_civicrm_xmlMenu(&$files) {
+  foreach (_sepa_civix_glob(__DIR__ . '/xml/Menu/*.xml') as $file) {
+    $files[] = $file;
+  }
+}

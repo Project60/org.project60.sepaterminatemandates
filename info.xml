@@ -15,9 +15,9 @@
   </urls>
   <releaseDate>2022-12-14</releaseDate>
   <version>1.0</version>
-  <develStage>alpha</develStage>
+  <develStage>stable</develStage>
   <compatibility>
-    <ver>5.38</ver>
+    <ver>5.37</ver>
   </compatibility>
   <comments>Funded by Amnesty Vlaanderen</comments>
   <classloader>
@@ -32,7 +32,6 @@
   <mixins>
     <mixin>mgd-php@1.0.0</mixin>
     <mixin>setting-php@1.0.0</mixin>
-    <mixin>menu-xml@1.0.0</mixin>
   </mixins>
   <requires>
     <ext>org.project60.sepa</ext>
