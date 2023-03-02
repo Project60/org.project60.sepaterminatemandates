@@ -118,4 +118,41 @@ class CRM_Sepaterminatemandates_Utils {
     return TRUE;
   }
 
+  public static function getSelectedEntityIds(array $searchFormValues, int $offset=0, int $limit=1): array {
+    $selectedEntityIds = [];
+    $entityIds = [];
+    if ($searchFormValues['radio_ts'] == 'ts_sel') {
+      foreach ($searchFormValues as $name => $value) {
+        if (substr($name, 0, CRM_Core_Form::CB_PREFIX_LEN) == CRM_Core_Form::CB_PREFIX) {
+          $entityIds[] = substr($name, CRM_Core_Form::CB_PREFIX_LEN);
+        }
+      }
+      for($i=$offset; $i < ($offset+$limit); $i++) {
+        $selectedEntityIds[] = $entityIds[$i];
+      }
+    } else {
+      $query = new CRM_Sepaterminatemandates_Query($searchFormValues, $offset, $limit);
+      foreach($query->rows() as $row) {
+        $selectedEntityIds[] = $row['id'];
+      }
+    }
+    return $selectedEntityIds;
+  }
+
+  public static function getSelectedEntityIdCount(array $searchFormValues): int {
+    $recordCount = 0;
+    if ($searchFormValues['radio_ts'] == 'ts_sel') {
+      foreach ($searchFormValues as $name => $value) {
+        if (substr($name, 0, CRM_Core_Form::CB_PREFIX_LEN) == CRM_Core_Form::CB_PREFIX) {
+          $entityIds[] = substr($name, CRM_Core_Form::CB_PREFIX_LEN);
+        }
+      }
+      $recordCount = count($entityIds);
+    } else {
+      $query = new CRM_Sepaterminatemandates_Query($searchFormValues, 0, 1);
+      $recordCount = $query->count();
+    }
+    return $recordCount;
+  }
+
 }

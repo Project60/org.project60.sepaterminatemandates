@@ -8,6 +8,10 @@ use CRM_Sepaterminatemandates_ExtensionUtil as E;
 
 class CRM_Sepaterminatemandates_Form_Task_SearchActionDesigner extends CRM_Searchactiondesigner_Form_Task_Task {
 
+  protected $recordCount = 0;
+
+  protected $searchFormValues = [];
+
   protected function setEntityShortName() {
     self::$entityShortname = 'sepaterminatemandates';
   }
@@ -18,21 +22,13 @@ class CRM_Sepaterminatemandates_Form_Task_SearchActionDesigner extends CRM_Searc
     $url = $session->readUserContext();
     $session->replaceUserContext($url);
 
-    $searchFormValues = $this->controller->exportValues($this->get('searchFormName'));
-    $this->_task = $searchFormValues['task'];
+    $this->searchFormValues = $this->controller->exportValues($this->get('searchFormName'));;
+    $this->_task = $this->searchFormValues['task'];
     $entityTasks = CRM_Sepaterminatemandates_Task::tasks();
     $this->assign('taskName', $entityTasks[$this->_task]);
 
-    $entityIds = [];
-    if ($searchFormValues['radio_ts'] == 'ts_sel') {
-      foreach ($searchFormValues as $name => $value) {
-        if (substr($name, 0, CRM_Core_Form::CB_PREFIX_LEN) == CRM_Core_Form::CB_PREFIX) {
-          $entityIds[] = substr($name, CRM_Core_Form::CB_PREFIX_LEN);
-        }
-      }
-    } else {
-      $entityIds = $this->get('entityIds');
-    }
+    $this->recordCount = CRM_Sepaterminatemandates_Utils::getSelectedEntityIdCount($this->searchFormValues);
+    $entityIds = CRM_Sepaterminatemandates_Utils::getSelectedEntityIds($this->searchFormValues, 0, $this->recordCount);
     $this->_entityIds = $this->_componentIds = $entityIds;
 
     if (strpos($this->_task,'searchactiondesigner_') !== 0) {
@@ -42,7 +38,7 @@ class CRM_Sepaterminatemandates_Form_Task_SearchActionDesigner extends CRM_Searc
 
     $this->searchTask = civicrm_api3('SearchTask', 'getsingle', array('id' => $this->searchTaskId));
     $this->assign('searchTask', $this->searchTask);
-    $this->assign('status', E::ts("Number of selected records: %1", array(1=>count($this->_entityIds))));
+    $this->assign('status', E::ts("Number of selected records: %1", array(1=>$this->recordCount)));
   }
 
 

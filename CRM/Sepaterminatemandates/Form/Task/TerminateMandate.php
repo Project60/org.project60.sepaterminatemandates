@@ -20,6 +20,10 @@ use CRM_Sepaterminatemandates_ExtensionUtil as E;
 
 class CRM_Sepaterminatemandates_Form_Task_TerminateMandate extends CRM_Core_Form_Task {
 
+  protected $recordCount = 0;
+
+  protected $searchFormValues = [];
+
   protected function setEntityShortName() {
     self::$entityShortname = 'sepaterminatemandates';
   }
@@ -30,23 +34,15 @@ class CRM_Sepaterminatemandates_Form_Task_TerminateMandate extends CRM_Core_Form
     $url = $session->readUserContext();
     $session->replaceUserContext($url);
 
-    $searchFormValues = $this->controller->exportValues($this->get('searchFormName'));
-    $this->_task = $searchFormValues['task'];
+    $this->searchFormValues = $this->controller->exportValues($this->get('searchFormName'));
+    $this->_task = $this->searchFormValues['task'];
     $entityTasks = CRM_Sepaterminatemandates_Task::tasks();
     $this->assign('taskName', $entityTasks[$this->_task]);
 
     $entityIds = [];
-    if ($searchFormValues['radio_ts'] == 'ts_sel') {
-      foreach ($searchFormValues as $name => $value) {
-        if (substr($name, 0, CRM_Core_Form::CB_PREFIX_LEN) == CRM_Core_Form::CB_PREFIX) {
-          $entityIds[] = substr($name, CRM_Core_Form::CB_PREFIX_LEN);
-        }
-      }
-    } else {
-      $entityIds = $this->get('entityIds');
-    }
+    $this->recordCount = CRM_Sepaterminatemandates_Utils::getSelectedEntityIdCount($this->searchFormValues);
     $this->_entityIds = $this->_componentIds = $entityIds;
-    $this->assign('status', E::ts("Number of selected records: %1", array(1=>count($this->_entityIds))));
+    $this->assign('status', E::ts("Number of selected records: %1", array(1=>$this->recordCount)));
   }
 
   public function buildQuickForm() {
@@ -91,21 +87,15 @@ class CRM_Sepaterminatemandates_Form_Task_TerminateMandate extends CRM_Core_Form
       'reset' => TRUE, //do flush queue upon creation
     ));
 
-    $total = count($this->_entityIds);
-    $current = 0;
-    foreach($this->_entityIds as $entityId) {
-      $current++;
-      if ($current > $total) {
-        $current = $total;
-      }
-      $title = E::ts('Terminate mandate %1', [1 => $current .'/'.$total]);
+    for($current=0; $current < $this->recordCount; $current++) {
+      $title = E::ts('Terminate mandate %1', [1 => $current .'/'.$this->recordCount]);
       //create a task without parameters
       $task = new CRM_Queue_Task(
         array(
           'CRM_Sepaterminatemandates_Form_Task_TerminateMandate',
           'terminateMandate'
         ), //call back method
-        array($entityId, $submittedValues), //parameters,
+        array($current, $submittedValues, $this->searchFormValues), //parameters,
         $title
       );
       //now add this task to the queue
@@ -125,8 +115,11 @@ class CRM_Sepaterminatemandates_Form_Task_TerminateMandate extends CRM_Core_Form
     $runner->runAllViaWeb(); // does not return
   }
 
-  public static function terminateMandate(CRM_Queue_TaskContext $ctx, int $mandateId, $terminateConfiguration) {
-    CRM_Sepaterminatemandates_Utils::terminateMandate($mandateId, $terminateConfiguration);
+  public static function terminateMandate(CRM_Queue_TaskContext $ctx, int $offset, $terminateConfiguration, $searchFormValues) {
+    $entityIds = CRM_Sepaterminatemandates_Utils::getSelectedEntityIds($searchFormValues, $offset, 1);
+    foreach($entityIds as $entityId) {
+      CRM_Sepaterminatemandates_Utils::terminateMandate($entityId, $terminateConfiguration);
+    }
     return TRUE;
   }
 
