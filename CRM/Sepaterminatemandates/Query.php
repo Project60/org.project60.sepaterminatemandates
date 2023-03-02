@@ -76,6 +76,7 @@ class CRM_Sepaterminatemandates_Query {
    * @throws \CiviCRM_API3_Exception
    */
   public function terminateAllFoundMandates($terminateConfiguration) {
+    $terminateConfiguration['is_auto'] = true;
     $count = 0;
     while($this->dao->fetch()) {
       CRM_Sepaterminatemandates_Utils::terminateMandate($this->dao->id, $terminateConfiguration);

@@ -69,14 +69,18 @@ class CRM_Sepaterminatemandates_Form_Task_TerminateMandate extends CRM_Core_Form
       'class' => 'huge',
       'placeholder' => E::ts('- select -'),
       'entity' => 'Contact',
-      'api' => array('params' => ['contact_type' => ['IN' => ['Individual']]]),
+      'api' => array(),
       'create' => false,
       'multiple' => false,
     ], false);
+    $this->add('text', 'subject', E::ts('Activity Subject'), [
+      'class' => 'huge',
+    ], true);
   }
 
   public function postProcess() {
     $submittedValues = $this->controller->exportValues();
+    $submittedValues['is_manual'] = true;
 
     $session = CRM_Core_Session::singleton();
 

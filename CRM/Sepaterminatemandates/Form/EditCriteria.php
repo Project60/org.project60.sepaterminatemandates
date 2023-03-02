@@ -106,10 +106,22 @@ class CRM_Sepaterminatemandates_Form_EditCriteria extends CRM_Core_Form {
         'class' => 'huge',
         'placeholder' => E::ts('- select -'),
         'entity' => 'Contact',
-        'api' => array('params' => ['contact_type' => ['IN' => ['Individual']]]),
+        'api' => array(),
         'create' => false,
         'multiple' => false,
       ], false);
+      $this->addEntityRef('activity_source', E::ts('Activity Added By'), [
+        'style' => 'min-width:250px',
+        'class' => 'huge',
+        'placeholder' => E::ts('- select -'),
+        'entity' => 'Contact',
+        'api' => array(),
+        'create' => false,
+        'multiple' => false,
+      ], true);
+      $this->add('text', 'subject', E::ts('Activity Subject'), [
+        'class' => 'huge',
+      ], true);
 
       $this->addButtons(array(
         array('type' => 'next', 'name' => E::ts('Save'), 'isDefault' => TRUE,),
@@ -142,9 +154,11 @@ class CRM_Sepaterminatemandates_Form_EditCriteria extends CRM_Core_Form {
       $values['search_criteria']['cancel_reasons'] = $submittedValues['cancel_reasons'];
       $values['terminate_configuration'] = [];
       $values['terminate_configuration']['reason'] = $submittedValues['reason'];
+      $values['terminate_configuration']['subject'] = $submittedValues['subject'];
       $values['terminate_configuration']['activity_type_id'] = $submittedValues['activity_type_id'];
       $values['terminate_configuration']['activity_status_id'] = $submittedValues['activity_status_id'];
       $values['terminate_configuration']['activity_assignee'] = $submittedValues['activity_assignee'];
+      $values['terminate_configuration']['activity_source'] = $submittedValues['activity_source'];
 
       if ($this->id) {
         $values['id'] = $this->id;

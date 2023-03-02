@@ -80,16 +80,39 @@ class CRM_Sepaterminatemandates_Utils {
   public static function terminateMandate(int $mandateId, $terminateConfiguration) {
     $mandate = civicrm_api3('SepaMandate', 'getsingle', ['id' => $mandateId]);
     $contactId = $mandate['contact_id'];
-    civicrm_api3('SepaMandate', 'terminate', ['mandate_id' => $mandateId, 'cancel_reason' => $terminateConfiguration['reason']]);
+    $activity_details = E::ts('Sepa mandate %1 cancelled because: %2', [1=>$mandate['reference'], 2=>$terminateConfiguration['reason']]);
+    if (isset($terminateConfiguration['is_manual']) && $terminateConfiguration['is_manual']) {
+      $activity_details = E::ts('Manual Sepa mandate %1 cancelled because: %2', [1=>$mandate['reference'], 2=>$terminateConfiguration['reason']]);
+    }
+    if (isset($terminateConfiguration['is_auto']) && $terminateConfiguration['is_auto']) {
+      $activity_details = E::ts('Automatic Sepa mandate %1 cancelled because: %2', [1=>$mandate['reference'], 2=>$terminateConfiguration['reason']]);
+    }
+    civicrm_api3('SepaMandate', 'terminate', ['mandate_id' => $mandateId, 'cancel_reason' => $activity_details]);
+    if ($mandate['entity_table'] == 'civicrm_contribution_recur') {
+      $recurId = $mandate['entity_id'];
+      try {
+        civicrm_api3('ContributionRecur', 'create', [
+          'id' => $recurId,
+          'cancel_reason' => $terminateConfiguration['reason'],
+        ]);
+      } catch (CiviCRM_API3_Exception $ex) {
+        // Do nothing
+      }
+    }
+
     $activityApiParams = [
       //'source_contact_id' => $contactId,
       'activity_type_id' => $terminateConfiguration['activity_type_id'],
       'status_id' => $terminateConfiguration['activity_status_id'],
       'target_id' => $contactId,
-      'subject' => E::ts('Sepa mandate %1 cancelled because: %2', [1=>$mandate['reference'], 2=>$terminateConfiguration['reason']]),
+      'subject' => $terminateConfiguration['subject'],
+      'details' => $activity_details,
     ];
     if (isset($terminateConfiguration['activity_assignee']) && !empty($terminateConfiguration['activity_assignee'])) {
       $activityApiParams['assignee_id'] = $terminateConfiguration['activity_assignee'];
+    }
+    if (isset($terminateConfiguration['activity_source']) && !empty($terminateConfiguration['activity_source'])) {
+      $activityApiParams['source_contact_id'] = $terminateConfiguration['activity_source'];
     }
     civicrm_api3('Activity', 'create', $activityApiParams);
     return TRUE;

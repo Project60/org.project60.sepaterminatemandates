@@ -82,6 +82,16 @@
       <div class="content">{$form.activity_assignee.html}</div>
       <div class="clear"></div>
     </div>
+    <div class="crm-section">
+      <div class="label">{$form.activity_source.label}</div>
+      <div class="content">{$form.activity_source.html}</div>
+      <div class="clear"></div>
+    </div>
+    <div class="crm-section">
+      <div class="label">{$form.subject.label}</div>
+      <div class="content">{$form.subject.html}</div>
+      <div class="clear"></div>
+    </div>
   </div>
 {/if}
 <div class="crm-submit-buttons">
